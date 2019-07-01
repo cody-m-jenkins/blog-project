@@ -1,0 +1,9 @@
+.header-container {
+    height:30vh;
+    background-color: forestgreen;
+    text-align: center;
+}
+
+.header-headshot {
+    height:20vh;
+}
