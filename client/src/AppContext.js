@@ -1,7 +1,12 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+const blogAxios = axios.create()
 
-
+blogAxios.interceptors.request.use((config)=>{
+    const token = localStorage.getItem("token");
+    config.headers.Authorization = `Bearer ${token}`;
+    return config;
+})
 
 const AppContext = React.createContext()
 
@@ -9,7 +14,7 @@ export class AppContextProvider extends Component {
     constructor() {
         super()
         this.state = {
-            todos: [],
+            blogs: [],
             user: JSON.parse(localStorage.getItem("user")) || {},
             token: localStorage.getItem("token") || ""
         }
@@ -20,25 +25,27 @@ export class AppContextProvider extends Component {
     }
 
     getBlogs = () => {
-        return axios.get("/")
+        return blogAxios.get("/")
             .then(response => {
-                this.setState({ todos: response.data });
+                this.setState({ blogs: response.data });
                 return response;
             })
     }
 
     addBlog = (newBlog) => {
-        axios.add('/blogs', newBlog)
+        return blogAxios.post('/api/blogs', newBlog)
             .then(response => {
+                console.log('hello')
                 this.setState(prevState => {
                     return { blogs: [...prevState.blogs, response.data]}
                 })
+                console.log(response)
                 return response
             })
     }
 
     editBlog = (blogId, blog) => {
-        return axios.put(`/blog/${blogId}`, blog)
+        return blogAxios.put(`/api/blog/${blogId}`, blog)
             .then(response => {
                 this.setState(prevState => {
                     const updatedBlogs = prevState.blogs.map(blog => {
@@ -51,7 +58,7 @@ export class AppContextProvider extends Component {
     }
 
     deleteBlog = (blogId) => {
-        return axios.delete(`/blog/${blogId}`)
+        return blogAxios.delete(`/api/blog/${blogId}`)
             .then(response => {
                 this.setState(prevState => {
                     const updatedBlogs = prevState.blogs.filter(blog => {
@@ -64,7 +71,7 @@ export class AppContextProvider extends Component {
     }
 
     login = (credentials) => {
-        return axios.post("/auth/login", credentials)
+        return blogAxios.post("/auth/login", credentials)
             .then(response => {
                 const { token, user } = response.data
                 localStorage.setItem("token", token)

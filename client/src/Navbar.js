@@ -10,7 +10,7 @@ const Navbar = (props) => {
             <Link to='/'>Home</Link>
             <Link to='/About'>About</Link>
             <Link to='/login'>Login</Link>
-            <Link to='admin/postpage'>Post</Link>
+            <Link to='/api/postpage'>Post</Link>
             <button onClick={props.logout}>Logout</button>
         </div>
     )

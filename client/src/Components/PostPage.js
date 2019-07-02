@@ -1,10 +1,46 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { withContext } from '../AppContext'
 import '../CSS/postpage.css'
 
-const PostPage = (props) => {
+class PostPage extends Component {
+    constructor() {
+        super()
+        this.state = {
+            title: '',
+            description: '',
+            body: ''
+        }
+    }
+
+    handleChange = (e) => {
+        e.persist()
+        const { name, value } = e.target
+        this.setState({
+            [name]: value
+        })
+    }
+
+    clearInputs = () => {
+        this.setState({
+            title: '',
+            description: '',
+            body: ''
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.props.addBlog(this.state)
+        .then(response => {
+            this.clearInputs()
+        })
+        .catch(err => console.error(err.response.data.message))
+    }
+    
+    render() {
     return(
         <div className='postpage-container'>
-            <form>
+            <form onSubmit= {this.handleSubmit}>
                 <div className='postpage-input-title'>
                     <label>Title:</label>
                     <input
@@ -13,6 +49,8 @@ const PostPage = (props) => {
                     name='title'
                     placeholder='(100 character max)'
                     maxLength='100' 
+                    value={this.state.title}
+                    onChange={this.handleChange}
                     />
                 </div>
                 <div className='postpage-input-description'>
@@ -22,7 +60,9 @@ const PostPage = (props) => {
                     required type='string'
                     name='description'
                     placeholder='(300 character max)'
-                    maxLength='300' 
+                    maxLength='300'
+                    value={this.state.description}
+                    onChange={this.handleChange} 
                     />
                 </div>
                 <div className='postpage-input-body'>
@@ -33,6 +73,8 @@ const PostPage = (props) => {
                     name='body'
                     placeholder='Body'
                     maxLength='' 
+                    value={this.state.body}
+                    onChange={this.handleChange}
                     />
                 </div>
                 <div className='postpage-date'
@@ -40,10 +82,12 @@ const PostPage = (props) => {
                     value=''
                     >
                 </div>
-                
+              <button>Submit</button>  
             </form>
         </div>
-    )
-}
+        )
+    }
+ }
 
-export default PostPage
+
+export default withContext (PostPage)
