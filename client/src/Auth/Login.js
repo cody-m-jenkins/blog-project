@@ -7,7 +7,8 @@ class Login extends Component {
         super();
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            erroMessage: ""
         }
     }
 
@@ -22,7 +23,7 @@ class Login extends Component {
         this.setState({
             username: "",
             password: "",
-            isAdmin: ""
+            erroMessage: ""
         })
     }
 
@@ -30,6 +31,9 @@ class Login extends Component {
         e.preventDefault();
         this.props.login(this.state)
             .then(() => this.props.history.push("/auth/login"))
+            .catch(err => {
+                this.setState({errorMessage: err.data})
+            })
     }
     
        render() {
@@ -43,14 +47,20 @@ class Login extends Component {
                         name="username"
                         type="text"
                         placeholder="username"/>
+                        <p></p>
                     <input
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
                         placeholder="password"/>
+                        <p></p>
                     <button type="submit">Submit</button>
                 </form>
+                {
+                this.state.errorMessage &&
+                <p style={{color: "red"}}>{this.state.errorMessage}</p>
+            }
             </div>
         )
     }

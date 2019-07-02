@@ -15,6 +15,9 @@ const blogSchema = new Schema({
         type: String,
         default: 'There is nothing here'
     },
+    imgUrl: {
+        type: String
+    },
     image: Buffer,
     date: {
         type: Date,

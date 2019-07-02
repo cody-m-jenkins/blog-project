@@ -25,17 +25,18 @@ export class AppContextProvider extends Component {
     }
 
     getBlogs = () => {
-        return blogAxios.get("/")
+        return blogAxios.get("/blogs")
             .then(response => {
+                console.log(response.data)
                 this.setState({ blogs: response.data });
                 return response;
             })
     }
 
     addBlog = (newBlog) => {
-        return blogAxios.post('/api/blogs', newBlog)
+        return blogAxios.post('/blogs', newBlog)
             .then(response => {
-                console.log('hello')
+
                 this.setState(prevState => {
                     return { blogs: [...prevState.blogs, response.data]}
                 })

@@ -1,16 +1,17 @@
 import React from 'react'
-import BlogCard from './BlogCard'
+import Blog from './Blog'
 import Header from './Header'
 import '../CSS/home.css'
+import { withContext } from '../AppContext'
 
 const Home = () => {
+
     return (
         <div className='home-container'>
-            <h1>Home</h1>
             <Header />
-            <BlogCard />
+            <Blog />
         </div>
     )
 }
 
-export default Home
+export default withContext (Home)

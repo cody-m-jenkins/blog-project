@@ -6,13 +6,41 @@ import { withContext } from './AppContext'
 
 const Navbar = (props) => {
     return (
-        <div className='navbar-container'>
-            <Link to='/'>Home</Link>
-            <Link to='/About'>About</Link>
-            <Link to='/login'>Login</Link>
-            <Link to='/api/postpage'>Post</Link>
-            <button onClick={props.logout}>Logout</button>
-        </div>
+        <nav className='navbar-container'>
+            {
+                !props.token ?
+                    <React.Fragment>
+                        <div className='nav-link'>
+                            <Link to='/'>Home</Link>
+                        </div>
+
+                        <div className='nav-link'>
+                            <Link to='/about'>About</Link>
+                        </div>
+
+                        <div className='nav-login'>
+                            <Link to='/login'>Login</Link>
+                        </div>
+                    </React.Fragment>
+                :
+                    <React.Fragment>
+                        <div className='nav-link'>
+                            <Link to='/'>Home</Link>
+                        </div>
+
+                        <div className='nav-link'>
+                            <Link to='/About'>About</Link>
+                        </div>
+
+                        <div className='nav-link'>
+                            <Link to='/api/postpage'>Post</Link>
+                        </div>
+                        
+                        <button className='logout-button' onClick={() => props.logout()}>Logout</button>
+                    </React.Fragment>
+
+            }
+        </nav>
     )
 }
 

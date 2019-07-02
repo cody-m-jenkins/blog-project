@@ -8,7 +8,8 @@ class PostPage extends Component {
         this.state = {
             title: '',
             description: '',
-            body: ''
+            body: '',
+            imgUrl: ''
         }
     }
 
@@ -47,13 +48,13 @@ class PostPage extends Component {
                     className='input-title'
                     required type='string'
                     name='title'
-                    placeholder='(100 character max)'
+                    placeholder='Required (100 character max)'
                     maxLength='100' 
                     value={this.state.title}
                     onChange={this.handleChange}
                     />
                 </div>
-                <div className='postpage-input-description'>
+                {/* <div className='postpage-input-description'>
                     <label>Description:</label>
                     <input
                     className='input-description'
@@ -64,7 +65,7 @@ class PostPage extends Component {
                     value={this.state.description}
                     onChange={this.handleChange} 
                     />
-                </div>
+                </div> */}
                 <div className='postpage-input-body'>
                     <label>Body:</label>
                     <input
@@ -74,6 +75,17 @@ class PostPage extends Component {
                     placeholder='Body'
                     maxLength='' 
                     value={this.state.body}
+                    onChange={this.handleChange}
+                    />
+                </div>
+                <div className='postpage-input-imgUrl'>
+                    <label>Img URL:</label>
+                    <input
+                    className='input-imgUrl'
+                    name='imgUrl'
+                    placeholder='Image URL'
+                    maxLength='' 
+                    value={this.state.imgUrl}
                     onChange={this.handleChange}
                     />
                 </div>

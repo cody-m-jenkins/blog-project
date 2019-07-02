@@ -1,3 +1,38 @@
 .navbar-container {
     font-size: 12pt;
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    background: #4f4cb0;
+    grid-template-rows: 10vh;
+    grid-template-columns: repeat(8,1fr);
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-container a {
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #e9eff9;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 1.5pt;
+    margin: 3vw;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.navbar-container a:hover {
+    transition: 0.3s;
+    color: lightblue
+}
+
+.logout-button {
+    width: 17vw;
+    height: 3.5vh;
+    border-radius: 5pt;
+    font-size: 2vh;
+    /* padding-top: 56%; */
 }

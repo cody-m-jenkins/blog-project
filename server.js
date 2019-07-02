@@ -21,7 +21,7 @@ mongoose.connect(
 app.use('/api', expressJwt({secret: process.env.SECRET}));
 
 // this is to make it so the admin is able to post, put, and delete things
-app.use('/api/blogs', require('./routes/blogRoutes.js'))
+app.use('/blogs', require('./routes/blogRoutes.js'))
 
 app.use('/auth', require('./routes/auth'))
 
