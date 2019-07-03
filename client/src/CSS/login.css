@@ -1,8 +1,21 @@
+body {
+    height: 90vh;
+}
+
 .form-wrapper {
     font-size: 12pt;
     padding-left: 8vw;
     margin: 15pt;
     padding-bottom: 8vh;
     justify-content: center;
-    border: solid black;
+    background: lightgray;
+    height: 30%;
+    width: 24%;
+    border-radius: 5pt;
+}
+
+button {
+    width: 10vw;
+    height: 4vh;
+    border-radius: 5pt;
 }

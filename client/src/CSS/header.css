@@ -1,9 +1,19 @@
 .header-container {
-    height:150pt;
-    background-color: forestgreen;
+    height: 200pt;
+    background-image: linear-gradient(to right, #6C8329 , #A2A74B, #6C8329);
     text-align: center;
+    background-repeat: no-repeat;
+    background-image: url('../Photos/mountain-header.jpg');
+    background-size: cover;
+    align-items: center;
+
+}
+
+.header img {
+    width: 100%;
 }
 
 .header-headshot {
     height:90pt;
+    align-items: center;
 }

@@ -1,3 +1,8 @@
 * {
+    font-family: times, georgia, arial;
     margin: 0;
+}
+
+img {
+    border-radius: 3pt;
 }

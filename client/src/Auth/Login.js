@@ -40,21 +40,23 @@ class Login extends Component {
         return (
             <div className="form-wrapper">
                 <form onSubmit={this.handleSubmit}>
+                <br />
                     <h3>Log In</h3>
+                    <br />
                     <input
                         onChange={this.handleChange}
                         value={this.state.username}
                         name="username"
                         type="text"
                         placeholder="username"/>
-                        <p></p>
+                        <br />
                     <input
                         onChange={this.handleChange}
                         value={this.state.password}
                         name="password"
                         type="password"
                         placeholder="password"/>
-                        <p></p>
+                        <br />
                     <button type="submit">Submit</button>
                 </form>
                 {

@@ -43,8 +43,9 @@ class PostPage extends Component {
         <div className='postpage-container'>
             <form onSubmit= {this.handleSubmit}>
                 <div className='postpage-input-title'>
-                    <label>Title:</label>
-                    <input
+                    <label>Title:<br /><br /></label>
+                    <textarea
+                    cols= '70'
                     className='input-title'
                     required type='string'
                     name='title'
@@ -66,21 +67,28 @@ class PostPage extends Component {
                     onChange={this.handleChange} 
                     />
                 </div> */}
-                <div className='postpage-input-body'>
-                    <label>Body:</label>
-                    <input
-                    className='input-body'
-                    required type='string'
-                    name='body'
-                    placeholder='Body'
-                    maxLength='' 
-                    value={this.state.body}
-                    onChange={this.handleChange}
-                    />
+
+                <div className= 'postpage-input-body-container'>
+                    <div className='postpage-input-body'>
+                        <label>Body:<br /><br /></label>
+                            <textarea
+                            rows= "25"
+                            cols= "70" 
+                            className='input-body'
+                            required type='string'
+                            name='body'
+                            placeholder='Body'
+                            maxLength='' 
+                            value={this.state.body}
+                            onChange={this.handleChange}
+                            />
+                        </div>
                 </div>
+
                 <div className='postpage-input-imgUrl'>
-                    <label>Img URL:</label>
-                    <input
+                    <label>Img URL: <br /><br /></label>
+                    <textarea
+                    cols= '70'
                     className='input-imgUrl'
                     name='imgUrl'
                     placeholder='Image URL'
@@ -94,6 +102,7 @@ class PostPage extends Component {
                     value=''
                     >
                 </div>
+
               <button>Submit</button>  
             </form>
         </div>

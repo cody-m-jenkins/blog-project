@@ -4,29 +4,30 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 3fr;
-    background: #4f4cb0;
+    background: #49A1F2;
     grid-template-rows: 10vh;
     grid-template-columns: repeat(8,1fr);
     align-items: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: Times, Georgia, Arial;
 }
 
 .navbar-container a {
     display: flex;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 1.6em;
     text-decoration: none;
-    color: #e9eff9;
+    color: black;
     font-family: 'Lato', sans-serif;
     letter-spacing: 1.5pt;
     margin: 3vw;
-    font-family: 'Roboto', sans-serif;
+    font-family: Times, Georgia, Arial;
+    font-weight: 500;
 
 }
 
-.navbar-container a:hover {
+.navbar-container a:active {
     transition: 0.3s;
-    color: lightblue
+    color: antiquewhite;
 }
 
 .logout-button {
