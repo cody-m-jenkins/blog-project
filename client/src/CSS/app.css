@@ -6,3 +6,9 @@
 img {
     border-radius: 3pt;
 }
+
+@media screen and (min-width: 992px) {
+    body {
+      font-size: 1.5em;
+    }
+  }

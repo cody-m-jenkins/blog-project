@@ -7,11 +7,14 @@ import Login from './Auth/Login'
 import PostPage from './Components/PostPage'
 import ProtectedRoute from './Auth/ProtectedRoute'
 import './CSS/app.css'
+import Header from './Components/Header'
 
 const App = () => {
     return (
         <div>
             <Navbar />
+            <Header />
+
             <Switch>
                 <Route exact path = '/' component={Home} />
                 <Route path = '/about' component={About} />

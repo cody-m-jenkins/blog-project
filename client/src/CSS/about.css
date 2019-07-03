@@ -1,12 +1,28 @@
 .about-container {
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 8%;
-    border: solid, black;
+    border: solid, black; */
+   
+    box-sizing: border-box;
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20pt;
+    margin-left: 20pt;
+    margin-bottom: 50pt;
+    background: #EAEAEA;
+    color: black;
+    border-radius: 10px;
+    padding-left: 3vw;
+    padding-top: 3vh;
+    padding-right: 3vw;
+    padding-bottom: 3vh;
 }
 
 .about-container img {
@@ -14,3 +30,17 @@
     background-color: black;
     width: 80vw;
 }
+
+box-sizing: border-box;
+width: 90vw;
+height: 100%;
+display: flex;
+flex-direction: column;
+margin-top: 20pt;
+background: #EAEAEA;
+color: black;
+border-radius: 10px;
+padding-left: 3vw;
+padding-top: 3vh;
+padding-right: 3vw;
+padding-bottom: 3vh;

@@ -1,7 +1,6 @@
 import React from 'react'
 import '../CSS/header.css'
 import headshot from '../Photos/headerheadshot.gif'
-import mountain from '../Photos/mountain-header.jpg'
 
 
 

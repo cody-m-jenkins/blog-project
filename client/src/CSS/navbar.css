@@ -4,7 +4,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 3fr;
-    background: #49A1F2;
+    background: linear-gradient(to right, #378CDD , #84CFFF, #378CDD);
     grid-template-rows: 10vh;
     grid-template-columns: repeat(8,1fr);
     align-items: center;
@@ -35,5 +35,5 @@
     height: 3.5vh;
     border-radius: 5pt;
     font-size: 2vh;
-    /* padding-top: 56%; */
+   
 }
